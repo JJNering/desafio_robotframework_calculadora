@@ -1,0 +1,513 @@
+{
+  "uid" : "32b88619acdb6e8a",
+  "name" : "Usuário tenta realizar operação matemática de divisão por zero",
+  "fullName" : "Calculadora.Usuário tenta realizar operação matemática de divisão por zero",
+  "historyId" : "418b09b46c1b65c715cdbfa06d90df90",
+  "time" : {
+    "start" : 1648496300601,
+    "stop" : 1648496311539,
+    "duration" : 10938
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "base.Inicia Sessão",
+    "time" : {
+      "stop" : 1648496301891
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "base.Carrega os Elementos do App",
+      "time" : {
+        "start" : 1648496300602,
+        "stop" : 1648496300608,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SikuliLibrary.Add Image Path",
+        "time" : {
+          "start" : 1648496300602,
+          "stop" : 1648496300605,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${Images}"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "SikuliLibrary.Set Capture Folder",
+        "time" : {
+          "start" : 1648496300605,
+          "stop" : 1648496300608,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${EXECDIR}\\\\output\\\\allure"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "SikuliLibrary.Open Application",
+      "time" : {
+        "start" : 1648496300608,
+        "stop" : 1648496301655,
+        "duration" : 1047
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${App}"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "SikuliLibrary.Get Image Coordinates",
+      "time" : {
+        "start" : 1648496301655,
+        "stop" : 1648496301889,
+        "duration" : 234
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e387c0c41d8ca609",
+        "name" : "Keyword Log",
+        "source" : "e387c0c41d8ca609.html",
+        "type" : "text/html",
+        "size" : 66
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "result_region.png"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "BuiltIn.Set Test Variable",
+      "time" : {
+        "start" : 1648496301889,
+        "stop" : 1648496301890,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "26074332e213311",
+        "name" : "Keyword Log",
+        "source" : "26074332e213311.html",
+        "type" : "text/html",
+        "size" : 66
+      } ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "${imageCoordinates}"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 6,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "operacoes_calc.Pressionar o botão",
+      "time" : {
+        "start" : 1648496301891,
+        "stop" : 1648496302754,
+        "duration" : 863
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SikuliLibrary.Click",
+        "time" : {
+          "start" : 1648496301891,
+          "stop" : 1648496302754,
+          "duration" : 863
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "331c52cb6c1d5542",
+          "name" : "Keyword Log",
+          "source" : "331c52cb6c1d5542.html",
+          "type" : "text/html",
+          "size" : 130
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "button_${BUTTON}.png"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "9"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "operacoes_calc.Pressionar o botão",
+      "time" : {
+        "start" : 1648496302754,
+        "stop" : 1648496303645,
+        "duration" : 891
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SikuliLibrary.Click",
+        "time" : {
+          "start" : 1648496302754,
+          "stop" : 1648496303645,
+          "duration" : 891
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "e6ed2e88dc5c7661",
+          "name" : "Keyword Log",
+          "source" : "e6ed2e88dc5c7661.html",
+          "type" : "text/html",
+          "size" : 130
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "button_${BUTTON}.png"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "divisão"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "operacoes_calc.Pressionar o botão",
+      "time" : {
+        "start" : 1648496303645,
+        "stop" : 1648496304516,
+        "duration" : 871
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SikuliLibrary.Click",
+        "time" : {
+          "start" : 1648496303645,
+          "stop" : 1648496304516,
+          "duration" : 871
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "f12307456e8ae3e2",
+          "name" : "Keyword Log",
+          "source" : "f12307456e8ae3e2.html",
+          "type" : "text/html",
+          "size" : 130
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "button_${BUTTON}.png"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "0"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "operacoes_calc.Pressionar o botão",
+      "time" : {
+        "start" : 1648496304516,
+        "stop" : 1648496305414,
+        "duration" : 898
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SikuliLibrary.Click",
+        "time" : {
+          "start" : 1648496304516,
+          "stop" : 1648496305414,
+          "duration" : 898
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "c656a1ee389acf41",
+          "name" : "Keyword Log",
+          "source" : "c656a1ee389acf41.html",
+          "type" : "text/html",
+          "size" : 130
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "button_${BUTTON}.png"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "igualdade"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "operacoes_calc.Deve exibir o resultado com a mensagem de erro",
+      "time" : {
+        "start" : 1648496305414,
+        "stop" : 1648496305918,
+        "duration" : 504
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "SikuliLibrary.Capture Region",
+        "time" : {
+          "start" : 1648496305414,
+          "stop" : 1648496305437,
+          "duration" : 23
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "e3170808fc2286f3",
+          "name" : "Keyword Log",
+          "source" : "e3170808fc2286f3.html",
+          "type" : "text/html",
+          "size" : 252
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${imageCoordinates}"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "SikuliLibrary.Get Text",
+        "time" : {
+          "start" : 1648496305437,
+          "stop" : 1648496305917,
+          "duration" : 480
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "8858eae14df8e9e6",
+          "name" : "Keyword Log",
+          "source" : "8858eae14df8e9e6.html",
+          "type" : "text/html",
+          "size" : 144
+        } ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${screenshotname}"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "BuiltIn.Should Be Equal As Strings",
+        "time" : {
+          "start" : 1648496305917,
+          "stop" : 1648496305918,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "arg1",
+          "value" : "${result}"
+        }, {
+          "name" : "arg2",
+          "value" : "${MSG}"
+        }, {
+          "name" : "arg3",
+          "value" : "Mensagem de erro"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "Cannot divide by zero"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 3,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 12,
+    "attachmentsCount" : 6,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "base.Finaliza Teste",
+    "time" : {
+      "stop" : 1648496311539
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "SikuliLibrary.Capture Screen",
+      "time" : {
+        "start" : 1648496305919,
+        "stop" : 1648496306399,
+        "duration" : 480
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7cf503c7bc401be9",
+        "name" : "Keyword Log",
+        "source" : "7cf503c7bc401be9.html",
+        "type" : "text/html",
+        "size" : 85
+      } ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "SikuliLibrary.Close Application",
+      "time" : {
+        "start" : 1648496306399,
+        "stop" : 1648496311539,
+        "duration" : 5140
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "arg1",
+        "value" : "Calculator"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 2,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Calculadora"
+  }, {
+    "name" : "framework",
+    "value" : "robotframework"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "host",
+    "value" : "JNering"
+  }, {
+    "name" : "thread",
+    "value" : "default-c5a787f4-18f9-4c81-b48e-bd20931b0fb3"
+  }, {
+    "name" : "tag",
+    "value" : "op_divisão"
+  }, {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "tag",
+    "value" : "op_divisão"
+  }, {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "smoke", "op_divisão" ]
+  },
+  "source" : "32b88619acdb6e8a.json",
+  "parameterValues" : [ ]
+}

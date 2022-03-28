@@ -1,0 +1,14 @@
+<environment>
+    <parameter>
+        <key>Windows</key>
+        <value>11</value>
+    </parameter>
+    <parameter>
+        <key>Calculator.Version</key>
+        <value>11.2201.4.0</value>
+    </parameter>
+    <parameter>
+        <key>Stand</key>
+        <value>Production</value>
+    </parameter>
+</environment>

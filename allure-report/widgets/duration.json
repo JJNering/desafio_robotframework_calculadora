@@ -1,0 +1,141 @@
+[ {
+  "uid" : "b54ae6c160cb36c5",
+  "name" : "Usuário realiza operação matemática de divisão",
+  "time" : {
+    "start" : 1648496274431,
+    "stop" : 1648496286672,
+    "duration" : 12241
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e27294224196893c",
+  "name" : "Usuário pressiona dois números",
+  "time" : {
+    "start" : 1648496138706,
+    "stop" : 1648496147654,
+    "duration" : 8948
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ced8662646fe09b3",
+  "name" : "Usuário tenta inserir mais do que 16 casas permitidas",
+  "time" : {
+    "start" : 1648496311539,
+    "stop" : 1648496335147,
+    "duration" : 23608
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7966a9770490bc52",
+  "name" : "Usuário realiza operação matemática de subtração com números decimais",
+  "time" : {
+    "start" : 1648496199479,
+    "stop" : 1648496218003,
+    "duration" : 18524
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a4dfafd3a989e70f",
+  "name" : "Usuário realiza operação matemática de multiplicação com um fator decimal e o outro negativo",
+  "time" : {
+    "start" : 1648496260408,
+    "stop" : 1648496274431,
+    "duration" : 14023
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9e9ec0d9f04f833d",
+  "name" : "Usuário realiza operação matemática de subtração",
+  "time" : {
+    "start" : 1648496186434,
+    "stop" : 1648496199462,
+    "duration" : 13028
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "72bb47960b2bc72d",
+  "name" : "Usuário realiza operação matemática de soma com números positivos",
+  "time" : {
+    "start" : 1648496147654,
+    "stop" : 1648496157651,
+    "duration" : 9997
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "529a4f01f7f07bb8",
+  "name" : "Usuário realiza operação matemática de soma com números decimais",
+  "time" : {
+    "start" : 1648496157651,
+    "stop" : 1648496173441,
+    "duration" : 15790
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "57031f49dbb08bb1",
+  "name" : "Usuário realiza operação matemática de multiplicação com dois fatores negativos",
+  "time" : {
+    "start" : 1648496230182,
+    "stop" : 1648496244174,
+    "duration" : 13992
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "32b88619acdb6e8a",
+  "name" : "Usuário tenta realizar operação matemática de divisão por zero",
+  "time" : {
+    "start" : 1648496300601,
+    "stop" : 1648496311539,
+    "duration" : 10938
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b48d9da70bacd92f",
+  "name" : "Usuário realiza operação matemática de divisão com divisor decimal e negativo",
+  "time" : {
+    "start" : 1648496286672,
+    "stop" : 1648496300594,
+    "duration" : 13922
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7d9daf0fc8da37dd",
+  "name" : "Usuário realiza operação matemática de soma com número negativo",
+  "time" : {
+    "start" : 1648496173441,
+    "stop" : 1648496186434,
+    "duration" : 12993
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d9a8e9e41320a5b8",
+  "name" : "Usuário realiza operação matemática de multiplicação",
+  "time" : {
+    "start" : 1648496218003,
+    "stop" : 1648496230182,
+    "duration" : 12179
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "dbede3d6a44ea85a",
+  "name" : "Usuário realiza operação matemática de multiplicação em condição de overflow",
+  "time" : {
+    "start" : 1648496244179,
+    "stop" : 1648496260402,
+    "duration" : 16223
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

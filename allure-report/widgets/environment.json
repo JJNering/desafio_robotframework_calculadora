@@ -1,0 +1,10 @@
+[ {
+  "values" : [ "11" ],
+  "name" : "Windows"
+}, {
+  "values" : [ "11.2201.4.0" ],
+  "name" : "Calculator.Version"
+}, {
+  "values" : [ "Production" ],
+  "name" : "Stand"
+} ]

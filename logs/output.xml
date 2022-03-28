@@ -1,0 +1,2606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.0 on win32)" generated="20220328 15:35:36.232" rpa="false" schemaversion="3">
+<suite id="s1" name="Calculadora" source="C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\tests\calculadora.robot">
+<test id="s1-t1" name="Usuário pressiona dois números" line="11">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:35:38.707" endtime="20220328 15:35:38.722"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:35:38.722" endtime="20220328 15:35:38.725"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:38.706" endtime="20220328 15:35:38.726"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:35:38.726" endtime="20220328 15:35:39.900"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:35:40.228" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:35:39.900" endtime="20220328 15:35:40.228"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:35:40.228" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:35:40.228" endtime="20220328 15:35:40.244"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:38.706" endtime="20220328 15:35:40.246"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:35:41.123" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496140423.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (535 msec)</msg>
+<status status="PASS" starttime="20220328 15:35:40.247" endtime="20220328 15:35:41.123"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:40.246" endtime="20220328 15:35:41.137"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:35:42.027" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496141327.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (541 msec)</msg>
+<status status="PASS" starttime="20220328 15:35:41.138" endtime="20220328 15:35:42.027"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:41.138" endtime="20220328 15:35:42.027"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>25</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:35:42.052" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496142042.png'/&gt;</msg>
+<msg timestamp="20220328 15:35:42.052" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496142042.png</msg>
+<status status="PASS" starttime="20220328 15:35:42.027" endtime="20220328 15:35:42.052"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:35:42.222" level="INFO">${resultado} = 25</msg>
+<status status="PASS" starttime="20220328 15:35:42.053" endtime="20220328 15:35:42.222"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:35:42.222" level="INFO">${resultado} = 25</msg>
+<status status="PASS" starttime="20220328 15:35:42.222" endtime="20220328 15:35:42.222"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:35:42.222" endtime="20220328 15:35:42.222"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:42.027" endtime="20220328 15:35:42.222"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:35:42.522" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496142283.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:35:42.222" endtime="20220328 15:35:42.522"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:35:42.524" endtime="20220328 15:35:47.654"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:42.222" endtime="20220328 15:35:47.654"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220328 15:35:38.705" endtime="20220328 15:35:47.654"/>
+</test>
+<test id="s1-t2" name="Usuário realiza operação matemática de soma com números positivos" line="20">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:35:47.654" endtime="20220328 15:35:47.654"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:35:47.654" endtime="20220328 15:35:47.654"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:47.654" endtime="20220328 15:35:47.654"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:35:47.654" endtime="20220328 15:35:48.710"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:35:48.916" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:35:48.711" endtime="20220328 15:35:48.916"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:35:48.916" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:35:48.916" endtime="20220328 15:35:48.916"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:47.654" endtime="20220328 15:35:48.931"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:35:49.299" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496149110.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (37 msec)</msg>
+<status status="PASS" starttime="20220328 15:35:48.932" endtime="20220328 15:35:49.299"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:48.931" endtime="20220328 15:35:49.299"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>mais</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:35:50.199" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496149493.png'/&gt;
+[log] CLICK on L[290,459]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:35:49.299" endtime="20220328 15:35:50.199"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:49.299" endtime="20220328 15:35:50.213"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>8</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:35:51.094" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496150389.png'/&gt;
+[log] CLICK on L[134,356]@S(0) (546 msec)</msg>
+<status status="PASS" starttime="20220328 15:35:50.214" endtime="20220328 15:35:51.094"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:50.214" endtime="20220328 15:35:51.095"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:35:52.058" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496151337.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220328 15:35:51.096" endtime="20220328 15:35:52.058"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:51.095" endtime="20220328 15:35:52.061"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>13</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:35:52.092" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496152088.png'/&gt;</msg>
+<msg timestamp="20220328 15:35:52.092" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496152088.png</msg>
+<status status="PASS" starttime="20220328 15:35:52.062" endtime="20220328 15:35:52.092"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:35:52.268" level="INFO">${resultado} = 13</msg>
+<status status="PASS" starttime="20220328 15:35:52.093" endtime="20220328 15:35:52.268"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:35:52.268" level="INFO">${resultado} = 13</msg>
+<status status="PASS" starttime="20220328 15:35:52.268" endtime="20220328 15:35:52.268"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:35:52.268" endtime="20220328 15:35:52.268"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:52.061" endtime="20220328 15:35:52.268"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:35:52.540" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496152332.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:35:52.268" endtime="20220328 15:35:52.540"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:35:52.540" endtime="20220328 15:35:57.651"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:52.268" endtime="20220328 15:35:57.651"/>
+</kw>
+<tag>op_soma</tag>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220328 15:35:47.654" endtime="20220328 15:35:57.651"/>
+</test>
+<test id="s1-t3" name="Usuário realiza operação matemática de soma com números decimais" line="31">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:35:57.651" endtime="20220328 15:35:57.651"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:35:57.651" endtime="20220328 15:35:57.651"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:57.651" endtime="20220328 15:35:57.651"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:35:57.651" endtime="20220328 15:35:58.721"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:35:58.946" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:35:58.721" endtime="20220328 15:35:58.946"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:35:58.947" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:35:58.947" endtime="20220328 15:35:58.947"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:57.651" endtime="20220328 15:35:58.948"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:35:59.808" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496159118.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220328 15:35:58.949" endtime="20220328 15:35:59.808"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:58.949" endtime="20220328 15:35:59.811"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>ponto</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:00.679" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496159988.png'/&gt;
+[log] CLICK on L[209,515]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:35:59.812" endtime="20220328 15:36:00.679"/>
+</kw>
+<status status="PASS" starttime="20220328 15:35:59.812" endtime="20220328 15:36:00.681"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:01.559" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496160854.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (545 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:00.682" endtime="20220328 15:36:01.559"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:00.681" endtime="20220328 15:36:01.559"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>4</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:02.487" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496161781.png'/&gt;
+[log] CLICK on L[55,407]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:01.559" endtime="20220328 15:36:02.487"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:01.559" endtime="20220328 15:36:02.501"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>mais</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:03.399" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496162678.png'/&gt;
+[log] CLICK on L[290,459]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:02.502" endtime="20220328 15:36:03.399"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:02.502" endtime="20220328 15:36:03.401"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>3</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:04.258" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496163575.png'/&gt;
+[log] CLICK on L[211,462]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:03.401" endtime="20220328 15:36:04.258"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:03.401" endtime="20220328 15:36:04.273"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>ponto</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:05.158" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496164468.png'/&gt;
+[log] CLICK on L[209,515]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:04.274" endtime="20220328 15:36:05.158"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:04.273" endtime="20220328 15:36:05.172"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:06.086" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496165365.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (546 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:05.173" endtime="20220328 15:36:06.086"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:05.173" endtime="20220328 15:36:06.086"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:06.942" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496166267.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:06.086" endtime="20220328 15:36:06.942"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:06.086" endtime="20220328 15:36:06.956"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:07.868" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496167163.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:06.957" endtime="20220328 15:36:07.868"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:06.956" endtime="20220328 15:36:07.882"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>13.19</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:36:07.903" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496167899.png'/&gt;</msg>
+<msg timestamp="20220328 15:36:07.903" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496167899.png</msg>
+<status status="PASS" starttime="20220328 15:36:07.883" endtime="20220328 15:36:07.903"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:36:08.075" level="INFO">${resultado} = 13.19</msg>
+<status status="PASS" starttime="20220328 15:36:07.904" endtime="20220328 15:36:08.075"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:36:08.075" level="INFO">${resultado} = 13.19</msg>
+<status status="PASS" starttime="20220328 15:36:08.075" endtime="20220328 15:36:08.075"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:36:08.075" endtime="20220328 15:36:08.075"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:07.883" endtime="20220328 15:36:08.075"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:36:08.361" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496168145.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:36:08.075" endtime="20220328 15:36:08.361"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:36:08.362" endtime="20220328 15:36:13.441"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:08.075" endtime="20220328 15:36:13.441"/>
+</kw>
+<tag>op_soma</tag>
+<status status="PASS" starttime="20220328 15:35:57.651" endtime="20220328 15:36:13.441"/>
+</test>
+<test id="s1-t4" name="Usuário realiza operação matemática de soma com número negativo" line="48">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:36:13.441" endtime="20220328 15:36:13.441"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:36:13.441" endtime="20220328 15:36:13.453"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:13.441" endtime="20220328 15:36:13.453"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:36:13.453" endtime="20220328 15:36:14.489"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:36:14.738" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:36:14.489" endtime="20220328 15:36:14.738"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:36:14.739" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:36:14.739" endtime="20220328 15:36:14.739"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:13.441" endtime="20220328 15:36:14.740"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>menos</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:15.586" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496174911.png'/&gt;
+[log] CLICK on L[288,406]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:14.741" endtime="20220328 15:36:15.586"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:14.740" endtime="20220328 15:36:15.586"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:16.452" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496175763.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (535 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:15.586" endtime="20220328 15:36:16.452"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:15.586" endtime="20220328 15:36:16.452"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>4</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:17.382" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496176677.png'/&gt;
+[log] CLICK on L[55,407]@S(0) (528 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:16.452" endtime="20220328 15:36:17.382"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:16.452" endtime="20220328 15:36:17.383"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>mais</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:18.263" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496177556.png'/&gt;
+[log] CLICK on L[290,459]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:17.384" endtime="20220328 15:36:18.263"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:17.383" endtime="20220328 15:36:18.264"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:19.118" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496178437.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (537 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:18.265" endtime="20220328 15:36:19.118"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:18.264" endtime="20220328 15:36:19.132"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>0</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:19.996" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496179313.png'/&gt;
+[log] CLICK on L[132,512]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:19.133" endtime="20220328 15:36:19.996"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:19.133" endtime="20220328 15:36:20.010"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:20.891" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496180201.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:20.011" endtime="20220328 15:36:20.891"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:20.010" endtime="20220328 15:36:20.891"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>-34</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:36:20.922" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496180906.png'/&gt;</msg>
+<msg timestamp="20220328 15:36:20.922" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496180906.png</msg>
+<status status="PASS" starttime="20220328 15:36:20.891" endtime="20220328 15:36:20.922"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:36:21.089" level="INFO">${resultado} = -34</msg>
+<status status="PASS" starttime="20220328 15:36:20.923" endtime="20220328 15:36:21.089"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:36:21.089" level="INFO">${resultado} = -34</msg>
+<status status="PASS" starttime="20220328 15:36:21.089" endtime="20220328 15:36:21.089"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:36:21.089" endtime="20220328 15:36:21.089"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:20.891" endtime="20220328 15:36:21.089"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:36:21.349" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496181139.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:36:21.089" endtime="20220328 15:36:21.349"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:36:21.349" endtime="20220328 15:36:26.419"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:21.089" endtime="20220328 15:36:26.434"/>
+</kw>
+<tag>op_soma</tag>
+<status status="PASS" starttime="20220328 15:36:13.441" endtime="20220328 15:36:26.434"/>
+</test>
+<test id="s1-t5" name="Usuário realiza operação matemática de subtração" line="62">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:36:26.440" endtime="20220328 15:36:26.444"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:36:26.444" endtime="20220328 15:36:26.446"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:26.434" endtime="20220328 15:36:26.447"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:36:26.447" endtime="20220328 15:36:27.492"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:36:27.728" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:36:27.492" endtime="20220328 15:36:27.729"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:36:27.730" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:36:27.730" endtime="20220328 15:36:27.730"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:26.434" endtime="20220328 15:36:27.731"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:28.602" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496187903.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (540 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:27.732" endtime="20220328 15:36:28.602"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:27.731" endtime="20220328 15:36:28.602"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:29.495" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496188789.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (546 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:28.602" endtime="20220328 15:36:29.495"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:28.602" endtime="20220328 15:36:29.509"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:30.346" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496189671.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:29.510" endtime="20220328 15:36:30.346"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:29.510" endtime="20220328 15:36:30.346"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>menos</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:31.249" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496190558.png'/&gt;
+[log] CLICK on L[288,406]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:30.346" endtime="20220328 15:36:31.249"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:30.346" endtime="20220328 15:36:31.249"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:32.120" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496191446.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:31.249" endtime="20220328 15:36:32.120"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:31.249" endtime="20220328 15:36:32.120"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:32.970" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496192295.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:32.120" endtime="20220328 15:36:32.970"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:32.120" endtime="20220328 15:36:32.970"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:33.898" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496193166.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (541 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:32.970" endtime="20220328 15:36:33.898"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:32.970" endtime="20220328 15:36:33.898"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>270</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:36:33.929" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496193913.png'/&gt;</msg>
+<msg timestamp="20220328 15:36:33.929" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496193913.png</msg>
+<status status="PASS" starttime="20220328 15:36:33.898" endtime="20220328 15:36:33.929"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:36:34.106" level="INFO">${resultado} = 270</msg>
+<status status="PASS" starttime="20220328 15:36:33.930" endtime="20220328 15:36:34.106"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:36:34.106" level="INFO">${resultado} = 270</msg>
+<status status="PASS" starttime="20220328 15:36:34.106" endtime="20220328 15:36:34.106"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:36:34.106" endtime="20220328 15:36:34.106"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:33.898" endtime="20220328 15:36:34.106"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:36:34.366" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496194157.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:36:34.106" endtime="20220328 15:36:34.366"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:36:34.366" endtime="20220328 15:36:39.446"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:34.106" endtime="20220328 15:36:39.462"/>
+</kw>
+<tag>op_subtração</tag>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220328 15:36:26.434" endtime="20220328 15:36:39.462"/>
+</test>
+<test id="s1-t6" name="Usuário realiza operação matemática de subtração com números decimais" line="76">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:36:39.480" endtime="20220328 15:36:39.482"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:36:39.483" endtime="20220328 15:36:39.485"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:39.480" endtime="20220328 15:36:39.485"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:36:39.485" endtime="20220328 15:36:40.518"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:36:40.738" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:36:40.518" endtime="20220328 15:36:40.738"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:36:40.753" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:36:40.753" endtime="20220328 15:36:40.753"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:39.479" endtime="20220328 15:36:40.754"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:41.621" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496200931.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:40.754" endtime="20220328 15:36:41.621"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:40.754" endtime="20220328 15:36:41.636"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>ponto</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:42.612" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496201812.png'/&gt;
+[log] CLICK on L[209,515]@S(0) (547 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:41.637" endtime="20220328 15:36:42.612"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:41.636" endtime="20220328 15:36:42.613"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:43.466" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496202792.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:42.614" endtime="20220328 15:36:43.466"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:42.614" endtime="20220328 15:36:43.469"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:44.342" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496203654.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (536 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:43.470" endtime="20220328 15:36:44.342"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:43.470" endtime="20220328 15:36:44.342"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:44.740" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496204536.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (39 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:44.342" endtime="20220328 15:36:44.740"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:44.342" endtime="20220328 15:36:44.740"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:45.108" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496204920.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (37 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:44.740" endtime="20220328 15:36:45.108"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:44.740" endtime="20220328 15:36:45.108"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:45.478" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496205274.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (39 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:45.108" endtime="20220328 15:36:45.478"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:45.108" endtime="20220328 15:36:45.478"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>menos</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:46.349" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496205658.png'/&gt;
+[log] CLICK on L[288,406]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:45.478" endtime="20220328 15:36:46.349"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:45.478" endtime="20220328 15:36:46.349"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:47.228" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496206523.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (534 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:46.349" endtime="20220328 15:36:47.228"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:46.349" endtime="20220328 15:36:47.229"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:48.095" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496207404.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:47.229" endtime="20220328 15:36:48.095"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:47.229" endtime="20220328 15:36:48.095"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>ponto</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:48.961" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496208287.png'/&gt;
+[log] CLICK on L[209,515]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:48.095" endtime="20220328 15:36:48.961"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:48.095" endtime="20220328 15:36:48.961"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:49.836" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496209147.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:48.961" endtime="20220328 15:36:49.836"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:48.961" endtime="20220328 15:36:49.837"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:50.675" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496210001.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:49.838" endtime="20220328 15:36:50.675"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:49.838" endtime="20220328 15:36:50.689"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:51.561" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496210870.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:50.690" endtime="20220328 15:36:51.561"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:50.690" endtime="20220328 15:36:51.561"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:36:52.445" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496211753.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:51.561" endtime="20220328 15:36:52.446"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:51.561" endtime="20220328 15:36:52.447"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>-22.29645</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:36:52.480" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496212475.png'/&gt;</msg>
+<msg timestamp="20220328 15:36:52.480" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496212475.png</msg>
+<status status="PASS" starttime="20220328 15:36:52.447" endtime="20220328 15:36:52.480"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:36:52.654" level="INFO">${resultado} = -22.29645</msg>
+<status status="PASS" starttime="20220328 15:36:52.480" endtime="20220328 15:36:52.654"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:36:52.654" level="INFO">${resultado} = -22.29645</msg>
+<status status="PASS" starttime="20220328 15:36:52.654" endtime="20220328 15:36:52.654"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:36:52.654" endtime="20220328 15:36:52.654"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:52.447" endtime="20220328 15:36:52.654"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:36:52.907" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496212701.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:36:52.654" endtime="20220328 15:36:52.907"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:36:52.907" endtime="20220328 15:36:57.988"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:52.654" endtime="20220328 15:36:58.003"/>
+</kw>
+<tag>op_subtração</tag>
+<status status="PASS" starttime="20220328 15:36:39.479" endtime="20220328 15:36:58.003"/>
+</test>
+<test id="s1-t7" name="Usuário realiza operação matemática de multiplicação" line="98">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:36:58.009" endtime="20220328 15:36:58.013"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:36:58.013" endtime="20220328 15:36:58.016"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:58.009" endtime="20220328 15:36:58.016"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:36:58.017" endtime="20220328 15:36:59.061"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:36:59.280" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:36:59.061" endtime="20220328 15:36:59.280"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:36:59.280" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:36:59.280" endtime="20220328 15:36:59.280"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:58.009" endtime="20220328 15:36:59.280"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>8</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:00.176" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496219486.png'/&gt;
+[log] CLICK on L[134,356]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:36:59.280" endtime="20220328 15:37:00.176"/>
+</kw>
+<status status="PASS" starttime="20220328 15:36:59.280" endtime="20220328 15:37:00.176"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:01.058" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496220368.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:00.176" endtime="20220328 15:37:01.058"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:00.176" endtime="20220328 15:37:01.058"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>multiplicação</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:01.924" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496221233.png'/&gt;
+[log] CLICK on L[286,352]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:01.058" endtime="20220328 15:37:01.924"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:01.058" endtime="20220328 15:37:01.924"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>7</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:02.808" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496222102.png'/&gt;
+[log] CLICK on L[52,355]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:01.924" endtime="20220328 15:37:02.808"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:01.924" endtime="20220328 15:37:02.822"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>6</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:03.698" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496223008.png'/&gt;
+[log] CLICK on L[208,406]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:02.823" endtime="20220328 15:37:03.698"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:02.822" endtime="20220328 15:37:03.698"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:04.614" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496223892.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:03.698" endtime="20220328 15:37:04.614"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:03.698" endtime="20220328 15:37:04.629"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>6232</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:37:04.653" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496224648.png'/&gt;</msg>
+<msg timestamp="20220328 15:37:04.653" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496224648.png</msg>
+<status status="PASS" starttime="20220328 15:37:04.630" endtime="20220328 15:37:04.653"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:37:04.819" level="INFO">${resultado} = 6232</msg>
+<status status="PASS" starttime="20220328 15:37:04.654" endtime="20220328 15:37:04.819"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:37:04.819" level="INFO">${resultado} = 6232</msg>
+<status status="PASS" starttime="20220328 15:37:04.819" endtime="20220328 15:37:04.819"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:37:04.819" endtime="20220328 15:37:04.819"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:04.629" endtime="20220328 15:37:04.819"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:37:05.076" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496224871.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:37:04.819" endtime="20220328 15:37:05.076"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:37:05.076" endtime="20220328 15:37:10.167"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:04.819" endtime="20220328 15:37:10.182"/>
+</kw>
+<tag>op_multiplicação</tag>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220328 15:36:58.003" endtime="20220328 15:37:10.182"/>
+</test>
+<test id="s1-t8" name="Usuário realiza operação matemática de multiplicação com dois fatores negativos" line="111">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:37:10.188" endtime="20220328 15:37:10.191"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:37:10.191" endtime="20220328 15:37:10.194"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:10.188" endtime="20220328 15:37:10.194"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:37:10.194" endtime="20220328 15:37:11.227"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:37:11.446" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:37:11.227" endtime="20220328 15:37:11.446"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:37:11.462" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:37:11.446" endtime="20220328 15:37:11.462"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:10.188" endtime="20220328 15:37:11.462"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>menos</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:12.330" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496231639.png'/&gt;
+[log] CLICK on L[288,406]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:11.462" endtime="20220328 15:37:12.330"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:11.462" endtime="20220328 15:37:12.344"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>8</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:13.227" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496232537.png'/&gt;
+[log] CLICK on L[134,356]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:12.346" endtime="20220328 15:37:13.227"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:12.345" endtime="20220328 15:37:13.227"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:14.118" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496233412.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:13.227" endtime="20220328 15:37:14.118"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:13.227" endtime="20220328 15:37:14.118"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>multiplicação</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:15.014" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496234308.png'/&gt;
+[log] CLICK on L[286,352]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:14.118" endtime="20220328 15:37:15.014"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:14.118" endtime="20220328 15:37:15.014"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>7</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:15.897" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496235191.png'/&gt;
+[log] CLICK on L[52,355]@S(0) (544 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:15.014" endtime="20220328 15:37:15.897"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:15.014" endtime="20220328 15:37:15.897"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>6</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:16.748" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496236069.png'/&gt;
+[log] CLICK on L[208,406]@S(0) (533 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:15.897" endtime="20220328 15:37:16.748"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:15.897" endtime="20220328 15:37:16.748"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>altera-sinal</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:17.631" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496236941.png'/&gt;
+[log] CLICK on L[55,510]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:16.748" endtime="20220328 15:37:17.631"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:16.748" endtime="20220328 15:37:17.631"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:18.543" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496237838.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:17.631" endtime="20220328 15:37:18.543"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:17.631" endtime="20220328 15:37:18.558"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>6232</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:37:18.593" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496238589.png'/&gt;</msg>
+<msg timestamp="20220328 15:37:18.594" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496238589.png</msg>
+<status status="PASS" starttime="20220328 15:37:18.559" endtime="20220328 15:37:18.594"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:37:18.768" level="INFO">${resultado} = 6232</msg>
+<status status="PASS" starttime="20220328 15:37:18.594" endtime="20220328 15:37:18.768"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:37:18.768" level="INFO">${resultado} = 6232</msg>
+<status status="PASS" starttime="20220328 15:37:18.768" endtime="20220328 15:37:18.768"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:37:18.768" endtime="20220328 15:37:18.768"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:18.558" endtime="20220328 15:37:18.768"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:37:19.041" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496238834.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:37:18.768" endtime="20220328 15:37:19.041"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:37:19.041" endtime="20220328 15:37:24.173"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:18.768" endtime="20220328 15:37:24.173"/>
+</kw>
+<tag>op_multiplicação</tag>
+<status status="PASS" starttime="20220328 15:37:10.182" endtime="20220328 15:37:24.173"/>
+</test>
+<test id="s1-t9" name="Usuário realiza operação matemática de multiplicação em condição de overflow" line="126">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:37:24.179" endtime="20220328 15:37:24.183"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:37:24.183" endtime="20220328 15:37:24.186"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:24.179" endtime="20220328 15:37:24.186"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:37:24.187" endtime="20220328 15:37:25.232"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:37:25.467" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:37:25.248" endtime="20220328 15:37:25.467"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:37:25.467" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:37:25.467" endtime="20220328 15:37:25.467"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:24.179" endtime="20220328 15:37:25.467"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:26.319" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496245642.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:25.467" endtime="20220328 15:37:26.319"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:25.467" endtime="20220328 15:37:26.320"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:26.700" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496246510.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (31 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:26.321" endtime="20220328 15:37:26.700"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:26.320" endtime="20220328 15:37:26.700"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:27.096" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496246890.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (47 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:26.700" endtime="20220328 15:37:27.096"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:26.700" endtime="20220328 15:37:27.110"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:27.493" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496247303.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (31 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:27.111" endtime="20220328 15:37:27.493"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:27.111" endtime="20220328 15:37:27.493"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:27.938" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496247732.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (34 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:27.493" endtime="20220328 15:37:27.938"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:27.493" endtime="20220328 15:37:27.939"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:28.302" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496248112.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (31 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:27.940" endtime="20220328 15:37:28.302"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:27.940" endtime="20220328 15:37:28.302"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:28.688" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496248499.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (31 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:28.302" endtime="20220328 15:37:28.688"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:28.302" endtime="20220328 15:37:28.703"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:29.086" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496248881.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (42 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:28.703" endtime="20220328 15:37:29.086"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:28.703" endtime="20220328 15:37:29.087"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:29.451" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496249261.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (31 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:29.088" endtime="20220328 15:37:29.451"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:29.087" endtime="20220328 15:37:29.465"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:29.882" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496249660.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (47 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:29.466" endtime="20220328 15:37:29.882"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:29.466" endtime="20220328 15:37:29.882"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:30.253" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496250057.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (32 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:29.882" endtime="20220328 15:37:30.253"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:29.882" endtime="20220328 15:37:30.256"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:30.632" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496250442.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (32 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:30.256" endtime="20220328 15:37:30.632"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:30.256" endtime="20220328 15:37:30.632"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:31.000" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496250810.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (31 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:30.632" endtime="20220328 15:37:31.000"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:30.632" endtime="20220328 15:37:31.014"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:31.411" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496251205.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (47 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:31.015" endtime="20220328 15:37:31.411"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:31.014" endtime="20220328 15:37:31.411"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:31.780" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496251591.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (27 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:31.411" endtime="20220328 15:37:31.781"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:31.411" endtime="20220328 15:37:31.781"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:32.181" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496251976.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (41 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:31.781" endtime="20220328 15:37:32.181"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:31.781" endtime="20220328 15:37:32.181"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>multiplicação</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:33.066" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496252375.png'/&gt;
+[log] CLICK on L[286,352]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:32.181" endtime="20220328 15:37:33.066"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:32.181" endtime="20220328 15:37:33.067"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:33.939" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496253245.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (536 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:33.068" endtime="20220328 15:37:33.939"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:33.068" endtime="20220328 15:37:33.939"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:34.824" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496254133.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:33.939" endtime="20220328 15:37:34.824"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:33.939" endtime="20220328 15:37:34.825"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>8.999999999999999e+16</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:37:34.858" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496254854.png'/&gt;</msg>
+<msg timestamp="20220328 15:37:34.858" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496254854.png</msg>
+<status status="PASS" starttime="20220328 15:37:34.826" endtime="20220328 15:37:34.859"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:37:35.035" level="INFO">${resultado} = 8.999999999999999e+16</msg>
+<status status="PASS" starttime="20220328 15:37:34.859" endtime="20220328 15:37:35.035"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:37:35.035" level="INFO">${resultado} = 8.999999999999999e+16</msg>
+<status status="PASS" starttime="20220328 15:37:35.035" endtime="20220328 15:37:35.035"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:37:35.035" endtime="20220328 15:37:35.035"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:34.826" endtime="20220328 15:37:35.035"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:37:35.307" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496255087.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:37:35.035" endtime="20220328 15:37:35.307"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:37:35.307" endtime="20220328 15:37:40.401"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:35.035" endtime="20220328 15:37:40.402"/>
+</kw>
+<tag>op_multiplicação</tag>
+<status status="PASS" starttime="20220328 15:37:24.178" endtime="20220328 15:37:40.402"/>
+</test>
+<test id="s1-t10" name="Usuário realiza operação matemática de multiplicação com um fator decimal e o outro negativo" line="152">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:37:40.408" endtime="20220328 15:37:40.411"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:37:40.412" endtime="20220328 15:37:40.414"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:40.408" endtime="20220328 15:37:40.414"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:37:40.415" endtime="20220328 15:37:41.470"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:37:41.692" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:37:41.471" endtime="20220328 15:37:41.692"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:37:41.693" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:37:41.693" endtime="20220328 15:37:41.693"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:40.408" endtime="20220328 15:37:41.694"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:42.600" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496261881.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (539 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:41.695" endtime="20220328 15:37:42.600"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:41.695" endtime="20220328 15:37:42.600"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>6</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:43.465" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496262775.png'/&gt;
+[log] CLICK on L[208,406]@S(0) (546 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:42.600" endtime="20220328 15:37:43.465"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:42.600" endtime="20220328 15:37:43.465"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>ponto</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:44.365" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496263676.png'/&gt;
+[log] CLICK on L[209,515]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:43.465" endtime="20220328 15:37:44.365"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:43.465" endtime="20220328 15:37:44.365"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>4</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:45.296" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496264574.png'/&gt;
+[log] CLICK on L[55,407]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:44.365" endtime="20220328 15:37:45.296"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:44.365" endtime="20220328 15:37:45.297"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>multiplicação</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:46.165" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496265475.png'/&gt;
+[log] CLICK on L[286,352]@S(0) (533 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:45.298" endtime="20220328 15:37:46.165"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:45.298" endtime="20220328 15:37:46.165"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>7</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:47.071" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496266349.png'/&gt;
+[log] CLICK on L[52,355]@S(0) (546 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:46.165" endtime="20220328 15:37:47.071"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:46.165" endtime="20220328 15:37:47.071"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>altera-sinal</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:47.955" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496267251.png'/&gt;
+[log] CLICK on L[55,510]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:47.071" endtime="20220328 15:37:47.955"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:47.071" endtime="20220328 15:37:47.955"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:48.839" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496268150.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:47.955" endtime="20220328 15:37:48.839"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:47.955" endtime="20220328 15:37:48.839"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>-184.8</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:37:48.860" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496268854.png'/&gt;</msg>
+<msg timestamp="20220328 15:37:48.861" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496268854.png</msg>
+<status status="PASS" starttime="20220328 15:37:48.839" endtime="20220328 15:37:48.861"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:37:49.034" level="INFO">${resultado} = -184.8</msg>
+<status status="PASS" starttime="20220328 15:37:48.862" endtime="20220328 15:37:49.034"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:37:49.034" level="INFO">${resultado} = -184.8</msg>
+<status status="PASS" starttime="20220328 15:37:49.034" endtime="20220328 15:37:49.034"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:37:49.034" endtime="20220328 15:37:49.034"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:48.839" endtime="20220328 15:37:49.034"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:37:49.308" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496269100.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:37:49.034" endtime="20220328 15:37:49.308"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:37:49.308" endtime="20220328 15:37:54.431"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:49.034" endtime="20220328 15:37:54.431"/>
+</kw>
+<tag>op_multiplicação</tag>
+<status status="PASS" starttime="20220328 15:37:40.407" endtime="20220328 15:37:54.431"/>
+</test>
+<test id="s1-t11" name="Usuário realiza operação matemática de divisão" line="167">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:37:54.439" endtime="20220328 15:37:54.442"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:37:54.442" endtime="20220328 15:37:54.444"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:54.439" endtime="20220328 15:37:54.445"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:37:54.445" endtime="20220328 15:37:55.490"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:37:55.725" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:37:55.490" endtime="20220328 15:37:55.725"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:37:55.725" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:37:55.725" endtime="20220328 15:37:55.725"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:54.439" endtime="20220328 15:37:55.725"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>1</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:56.660" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496275938.png'/&gt;
+[log] CLICK on L[54,460]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:55.725" endtime="20220328 15:37:56.660"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:55.725" endtime="20220328 15:37:56.660"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:57.539" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496276832.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (542 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:56.660" endtime="20220328 15:37:57.539"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:56.660" endtime="20220328 15:37:57.540"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>8</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:58.408" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496277718.png'/&gt;
+[log] CLICK on L[134,356]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:57.541" endtime="20220328 15:37:58.408"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:57.540" endtime="20220328 15:37:58.409"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>divisão</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:37:59.283" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496278593.png'/&gt;
+[log] CLICK on L[286,301]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:58.410" endtime="20220328 15:37:59.283"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:58.410" endtime="20220328 15:37:59.283"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:00.195" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496279460.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (543 msec)</msg>
+<status status="PASS" starttime="20220328 15:37:59.283" endtime="20220328 15:38:00.195"/>
+</kw>
+<status status="PASS" starttime="20220328 15:37:59.283" endtime="20220328 15:38:00.195"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:01.090" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496280400.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:00.195" endtime="20220328 15:38:01.090"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:00.195" endtime="20220328 15:38:01.090"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>64</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:38:01.120" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496281105.png'/&gt;</msg>
+<msg timestamp="20220328 15:38:01.121" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496281105.png</msg>
+<status status="PASS" starttime="20220328 15:38:01.090" endtime="20220328 15:38:01.121"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:38:01.301" level="INFO">${resultado} = 64</msg>
+<status status="PASS" starttime="20220328 15:38:01.122" endtime="20220328 15:38:01.301"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:38:01.301" level="INFO">${resultado} = 64</msg>
+<status status="PASS" starttime="20220328 15:38:01.301" endtime="20220328 15:38:01.301"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:38:01.301" endtime="20220328 15:38:01.301"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:01.090" endtime="20220328 15:38:01.301"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:38:01.555" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496281350.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:38:01.301" endtime="20220328 15:38:01.555"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:38:01.555" endtime="20220328 15:38:06.657"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:01.301" endtime="20220328 15:38:06.672"/>
+</kw>
+<tag>op_divisão</tag>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220328 15:37:54.431" endtime="20220328 15:38:06.672"/>
+</test>
+<test id="s1-t12" name="Usuário realiza operação matemática de divisão com divisor decimal e negativo" line="180">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:38:06.678" endtime="20220328 15:38:06.681"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:38:06.681" endtime="20220328 15:38:06.684"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:06.678" endtime="20220328 15:38:06.684"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:38:06.684" endtime="20220328 15:38:07.717"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:38:07.952" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:38:07.717" endtime="20220328 15:38:07.952"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:38:07.952" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:38:07.952" endtime="20220328 15:38:07.952"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:06.678" endtime="20220328 15:38:07.952"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>8</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:08.834" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496288128.png'/&gt;
+[log] CLICK on L[134,356]@S(0) (546 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:07.952" endtime="20220328 15:38:08.834"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:07.952" endtime="20220328 15:38:08.834"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>4</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:09.735" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496289030.png'/&gt;
+[log] CLICK on L[55,407]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:08.834" endtime="20220328 15:38:09.735"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:08.834" endtime="20220328 15:38:09.749"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>divisão</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:10.619" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496289929.png'/&gt;
+[log] CLICK on L[286,301]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:09.750" endtime="20220328 15:38:10.619"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:09.750" endtime="20220328 15:38:10.619"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>4</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:11.518" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496290827.png'/&gt;
+[log] CLICK on L[55,407]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:10.619" endtime="20220328 15:38:11.518"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:10.619" endtime="20220328 15:38:11.521"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>ponto</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:12.397" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496291707.png'/&gt;
+[log] CLICK on L[209,515]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:11.522" endtime="20220328 15:38:12.397"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:11.521" endtime="20220328 15:38:12.397"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>8</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:13.276" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496292602.png'/&gt;
+[log] CLICK on L[134,356]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:12.397" endtime="20220328 15:38:13.276"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:12.397" endtime="20220328 15:38:13.290"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>altera-sinal</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:14.163" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496293468.png'/&gt;
+[log] CLICK on L[55,510]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:13.291" endtime="20220328 15:38:14.164"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:13.291" endtime="20220328 15:38:14.165"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:15.063" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496294357.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:14.165" endtime="20220328 15:38:15.063"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:14.165" endtime="20220328 15:38:15.063"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>-17.5</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:38:15.082" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496295078.png'/&gt;</msg>
+<msg timestamp="20220328 15:38:15.082" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496295078.png</msg>
+<status status="PASS" starttime="20220328 15:38:15.063" endtime="20220328 15:38:15.082"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:38:15.252" level="INFO">${resultado} = -17.5</msg>
+<status status="PASS" starttime="20220328 15:38:15.083" endtime="20220328 15:38:15.252"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:38:15.252" level="INFO">${resultado} = -17.5</msg>
+<status status="PASS" starttime="20220328 15:38:15.252" endtime="20220328 15:38:15.252"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:38:15.252" endtime="20220328 15:38:15.252"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:15.063" endtime="20220328 15:38:15.252"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:38:15.524" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496295317.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:38:15.252" endtime="20220328 15:38:15.524"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:38:15.524" endtime="20220328 15:38:20.579"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:15.252" endtime="20220328 15:38:20.594"/>
+</kw>
+<tag>op_divisão</tag>
+<status status="PASS" starttime="20220328 15:38:06.672" endtime="20220328 15:38:20.594"/>
+</test>
+<test id="s1-t13" name="Usuário tenta realizar operação matemática de divisão por zero" line="195">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:38:20.602" endtime="20220328 15:38:20.605"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:38:20.605" endtime="20220328 15:38:20.607"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:20.602" endtime="20220328 15:38:20.608"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:38:20.608" endtime="20220328 15:38:21.655"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:38:21.888" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:38:21.655" endtime="20220328 15:38:21.888"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:38:21.890" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:38:21.889" endtime="20220328 15:38:21.890"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:20.601" endtime="20220328 15:38:21.890"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:22.754" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496302064.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:21.891" endtime="20220328 15:38:22.754"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:21.891" endtime="20220328 15:38:22.754"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>divisão</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:23.645" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496302938.png'/&gt;
+[log] CLICK on L[286,301]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:22.754" endtime="20220328 15:38:23.645"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:22.754" endtime="20220328 15:38:23.645"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>0</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:24.516" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496303826.png'/&gt;
+[log] CLICK on L[132,512]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:23.645" endtime="20220328 15:38:24.516"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:23.645" endtime="20220328 15:38:24.516"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>igualdade</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:25.414" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496304724.png'/&gt;
+[log] CLICK on L[290,514]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:24.516" endtime="20220328 15:38:25.414"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:24.516" endtime="20220328 15:38:25.414"/>
+</kw>
+<kw name="Deve exibir o resultado com a mensagem de erro" library="operacoes_calc">
+<arg>Cannot divide by zero</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:38:25.436" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496305429.png'/&gt;</msg>
+<msg timestamp="20220328 15:38:25.436" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496305429.png</msg>
+<status status="PASS" starttime="20220328 15:38:25.414" endtime="20220328 15:38:25.436"/>
+</kw>
+<kw name="Get Text" library="SikuliLibrary">
+<var>${result}</var>
+<arg>${screenshotname}</arg>
+<doc>Get text</doc>
+<msg timestamp="20220328 15:38:25.916" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496305682.png'/&gt;</msg>
+<msg timestamp="20220328 15:38:25.916" level="INFO">${result} = Cannot divide by zero</msg>
+<status status="PASS" starttime="20220328 15:38:25.437" endtime="20220328 15:38:25.916"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${MSG}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220328 15:38:25.917" endtime="20220328 15:38:25.917"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:25.414" endtime="20220328 15:38:25.918"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:38:26.398" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496305971.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:38:25.919" endtime="20220328 15:38:26.398"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:38:26.399" endtime="20220328 15:38:31.539"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:25.918" endtime="20220328 15:38:31.539"/>
+</kw>
+<tag>op_divisão</tag>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220328 15:38:20.594" endtime="20220328 15:38:31.539"/>
+</test>
+<test id="s1-t14" name="Usuário tenta inserir mais do que 16 casas permitidas" line="206">
+<kw name="Inicia Sessão" library="base" type="SETUP">
+<kw name="Carrega os Elementos do App" library="base">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${Images}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220328 15:38:31.546" endtime="20220328 15:38:31.549"/>
+</kw>
+<kw name="Set Capture Folder" library="SikuliLibrary">
+<arg>${EXECDIR}\\output\\allure</arg>
+<doc>Set captured folder</doc>
+<status status="PASS" starttime="20220328 15:38:31.549" endtime="20220328 15:38:31.552"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:31.546" endtime="20220328 15:38:31.552"/>
+</kw>
+<kw name="Open Application" library="SikuliLibrary">
+<arg>${App}</arg>
+<doc>Open application
+ To open app with parameters, refer:
+ https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</doc>
+<status status="PASS" starttime="20220328 15:38:31.553" endtime="20220328 15:38:32.599"/>
+</kw>
+<kw name="Get Image Coordinates" library="SikuliLibrary">
+<var>${imageCoordinates}</var>
+<arg>result_region.png</arg>
+<doc>Get Image Coordinates</doc>
+<msg timestamp="20220328 15:38:32.833" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:38:32.599" endtime="20220328 15:38:32.833"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${imageCoordinates}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220328 15:38:32.833" level="INFO">${imageCoordinates} = [18, 118, 308, 66]</msg>
+<status status="PASS" starttime="20220328 15:38:32.833" endtime="20220328 15:38:32.833"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:31.546" endtime="20220328 15:38:32.833"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>4</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:33.736" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496313030.png'/&gt;
+[log] CLICK on L[55,407]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:32.833" endtime="20220328 15:38:33.736"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:32.833" endtime="20220328 15:38:33.750"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:34.634" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496313944.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:33.751" endtime="20220328 15:38:34.634"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:33.750" endtime="20220328 15:38:34.634"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>8</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:35.525" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496314819.png'/&gt;
+[log] CLICK on L[134,356]@S(0) (542 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:34.634" endtime="20220328 15:38:35.525"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:34.634" endtime="20220328 15:38:35.528"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:36.400" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496315710.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:35.528" endtime="20220328 15:38:36.400"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:35.528" endtime="20220328 15:38:36.400"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:37.246" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496316571.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:36.400" endtime="20220328 15:38:37.246"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:36.400" endtime="20220328 15:38:37.247"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>6</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:38.104" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496317426.png'/&gt;
+[log] CLICK on L[208,406]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:37.247" endtime="20220328 15:38:38.104"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:37.247" endtime="20220328 15:38:38.104"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:39.000" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496318280.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (545 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:38.104" endtime="20220328 15:38:39.000"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:38.104" endtime="20220328 15:38:39.000"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>4</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:39.900" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496319194.png'/&gt;
+[log] CLICK on L[55,407]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:39.000" endtime="20220328 15:38:39.900"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:39.000" endtime="20220328 15:38:39.900"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>7</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:40.768" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496320078.png'/&gt;
+[log] CLICK on L[52,355]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:39.900" endtime="20220328 15:38:40.768"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:39.900" endtime="20220328 15:38:40.768"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>5</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:41.622" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496320947.png'/&gt;
+[log] CLICK on L[132,405]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:40.768" endtime="20220328 15:38:41.622"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:40.768" endtime="20220328 15:38:41.622"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>6</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:42.501" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496321795.png'/&gt;
+[log] CLICK on L[208,406]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:41.622" endtime="20220328 15:38:42.501"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:41.622" endtime="20220328 15:38:42.501"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>4</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:43.410" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496322704.png'/&gt;
+[log] CLICK on L[55,407]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:42.501" endtime="20220328 15:38:43.411"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:42.501" endtime="20220328 15:38:43.412"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:44.273" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496323583.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:43.412" endtime="20220328 15:38:44.273"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:43.412" endtime="20220328 15:38:44.273"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>8</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:45.133" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496324443.png'/&gt;
+[log] CLICK on L[134,356]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:44.273" endtime="20220328 15:38:45.133"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:44.273" endtime="20220328 15:38:45.133"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>3</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:46.001" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496325327.png'/&gt;
+[log] CLICK on L[211,462]@S(0) (532 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:45.133" endtime="20220328 15:38:46.001"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:45.133" endtime="20220328 15:38:46.001"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:46.851" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496326177.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (531 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:46.001" endtime="20220328 15:38:46.851"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:46.001" endtime="20220328 15:38:46.851"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>6</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:47.780" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496327060.png'/&gt;
+[log] CLICK on L[208,406]@S(0) (542 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:46.851" endtime="20220328 15:38:47.780"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:46.851" endtime="20220328 15:38:47.780"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>2</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:48.648" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496327959.png'/&gt;
+[log] CLICK on L[132,461]@S(0) (529 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:47.780" endtime="20220328 15:38:48.648"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:47.780" endtime="20220328 15:38:48.648"/>
+</kw>
+<kw name="Pressionar o botão" library="operacoes_calc">
+<arg>9</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>button_${BUTTON}.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220328 15:38:49.541" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496328836.png'/&gt;
+[log] CLICK on L[211,354]@S(0) (544 msec)</msg>
+<status status="PASS" starttime="20220328 15:38:48.648" endtime="20220328 15:38:49.541"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:48.648" endtime="20220328 15:38:49.541"/>
+</kw>
+<kw name="Deve exibir o resultado" library="operacoes_calc">
+<arg>4289562475649832</arg>
+<kw name="Capture Region" library="SikuliLibrary">
+<var>${screenshotname}</var>
+<arg>${imageCoordinates}</arg>
+<doc>Capture region</doc>
+<msg timestamp="20220328 15:38:49.560" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496329556.png'/&gt;</msg>
+<msg timestamp="20220328 15:38:49.560" level="INFO">${screenshotname} = C:\Users\JJNering\Desktop\desafio_robotframework_calculadora\output\allure\sikuli_captured\sikuliximage-1648496329556.png</msg>
+<status status="PASS" starttime="20220328 15:38:49.541" endtime="20220328 15:38:49.560"/>
+</kw>
+<kw name="Copy" library="ImageHorizonLibrary">
+<var>${resultado}</var>
+<doc>Executes ``Ctrl+C`` on Windows and Linux, ``⌘+C`` on OS X and
+returns the content of the clipboard.</doc>
+<msg timestamp="20220328 15:38:49.726" level="INFO">${resultado} = 4289562475649832</msg>
+<status status="PASS" starttime="20220328 15:38:49.561" endtime="20220328 15:38:49.726"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${resultado}</var>
+<arg>${resultado}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220328 15:38:49.726" level="INFO">${resultado} = 4289562475649832</msg>
+<status status="PASS" starttime="20220328 15:38:49.726" endtime="20220328 15:38:49.726"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${resultado}</arg>
+<arg>${RESULT}</arg>
+<arg>Mensagem de erro</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20220328 15:38:49.726" endtime="20220328 15:38:49.726"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:49.541" endtime="20220328 15:38:49.726"/>
+</kw>
+<kw name="Finaliza Teste" library="base" type="TEARDOWN">
+<kw name="Capture Screen" library="SikuliLibrary">
+<doc>Capture whole screen, file name is returned</doc>
+<msg timestamp="20220328 15:38:50.003" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1648496329795.png'/&gt;</msg>
+<status status="PASS" starttime="20220328 15:38:49.726" endtime="20220328 15:38:50.003"/>
+</kw>
+<kw name="Close Application" library="SikuliLibrary">
+<arg>Calculator</arg>
+<doc>Close application</doc>
+<status status="PASS" starttime="20220328 15:38:50.003" endtime="20220328 15:38:55.145"/>
+</kw>
+<status status="PASS" starttime="20220328 15:38:49.726" endtime="20220328 15:38:55.146"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" starttime="20220328 15:38:31.539" endtime="20220328 15:38:55.147"/>
+</test>
+<doc>Suítes de testes</doc>
+<status status="PASS" starttime="20220328 15:35:36.288" endtime="20220328 15:38:55.149"/>
+</suite>
+<statistics>
+<total>
+<stat pass="14" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">op_divisão</stat>
+<stat pass="4" fail="0" skip="0">op_multiplicação</stat>
+<stat pass="3" fail="0" skip="0">op_soma</stat>
+<stat pass="2" fail="0" skip="0">op_subtração</stat>
+<stat pass="7" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="14" fail="0" skip="0" id="s1" name="Calculadora">Calculadora</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
